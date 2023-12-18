@@ -1,0 +1,660 @@
+html {
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(12, 46, 61);
+  margin: 0px -10px;
+}
+
+body{
+  margin:0;
+}
+
+#backgroundMusic {
+  display: none;
+}
+
+/* Header */
+header {
+  /* size of Nav Bar */
+  width: 110%;
+  height: 20px;
+  /* background color of Nav Bar: Dark blue*/
+  background-color: rgb(3, 35, 50);
+  position: fixed;
+  z-index: 1;/* The Nav Bar always appears at the top, even when scrolling to the bottom of the website. */
+  
+  /* layout rearrangement of Nav Bar */ 
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-end;
+  /* space inside & around the Nav Bar */
+  padding-top: 50px;
+  padding-bottom: 30px;
+  margin-top: -10px;
+  }  
+
+  /* Love STRAY (logo) */
+.logo {
+  display: flex;
+  flex-direction: row;
+  font-family: "Shrikhand";
+  color: rgb(255, 235, 0);
+  font-size: 1.2rem;
+  }
+  
+  .logo a {
+  text-decoration: none;
+  color: rgb(255, 235, 0);
+  }
+  
+  .logo a:hover {
+  color: rgb(255, 255, 255);
+  }
+
+  /* Navigation Menu */
+.nav {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  font-size: 16px;
+  font-weight: bolder;
+  margin-bottom: 5px;
+  }
+  
+  .nav a {
+  padding-right: 30px;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  }
+  
+  .nav a:hover {
+  color: rgb(66, 54, 235);
+  transition: all 0.3s ease;
+  }  
+  
+  @media only screen and (min-device-width: 390px) and (max-device-width: 480px) {
+    header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 75px;
+    margin-top: -50px;
+    padding-top: 100px;
+    background: rgb(3, 35, 50);
+    width: 110%;
+    }
+    
+    .logo {
+    text-align: center;
+    font-size: 2.2rem;
+    letter-spacing: 0.1px;
+    }
+    
+    .nav {
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    opacity: 0;
+    font-size: 28px;
+    font-weight: lighter;
+    }
+    
+    .nav a {
+    transition: height 1s ease;
+    }
+    
+    .nav.active {
+    z-index: 99;
+    background-color: rgb(28, 17, 35);
+    top: 100%;
+    width: 100%;
+    opacity: 1;
+    height: 300px;
+    transition: height 1s ease;
+    padding-bottom: 20px;
+    margin-top: -10px;
+    }
+    
+    .nav_toggle .bar {
+    width: 32px;
+    height: 3px;
+    margin: 5px auto;
+    display: block;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    background-color: rgb(224, 177, 203);
+    }
+    
+    #mobile_menu {
+    position: absolute;
+    top: 50%;
+    right: 12%;
+    transform: translate(5% 20%);
+    }
+    
+    #mobile_menu.is-active .bar:nth-child(2) {
+    opacity: 0;
+    }
+    
+    #mobile_menu.is-active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+    }
+    
+    #mobile_menu.is-active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+    }
+    }
+    
+/* Banner 
+.banner{
+    background: url("./img/Banner.jpg");
+    background-size: cover;
+    height: 300px;
+    padding-top: 1000px;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "shrikhand";
+}
+
+.banner h1 {
+   background-color: rgb(159, 134, 192);
+    width: 215px;
+    text-align: center;
+    color: rgb(255, 235, 0);
+    margin-top: -50px;
+    margin-left: 25px;
+    border-top: 5px solid rgb(255, 235, 0);
+    border-bottom: 5px solid rgb(255, 235, 0);
+}
+
+.banner h2 {
+    background-color: rgb(0, 69, 149);
+    width: 450px;
+    text-align: center;
+    color: white;
+    margin-top: 0px;
+    margin-left: 25px;
+} */
+
+/* Photo Slideshow */
+.slideshow-container {
+  position: relative;
+  padding-top: 20px;
+  }
+  
+  .mySlide {
+    display: none;
+    }
+    
+ .mySlide img {
+    width: 100%;
+    }
+    
+@media only screen and (min-device-width: 390px) and (max-device-width: 480px) {
+  .mySlide img {
+    width: 100%;
+  }
+
+  .slideshow-container{
+    padding-top: 150px;
+  }
+
+  .prev, .next {
+    margin-top: 50px;
+  }
+}
+    
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  }
+  
+  .next {
+  right: 0;
+  }
+  
+  .fade {
+  animation-name: fade;
+  animation-duration: 0.5s;
+  }
+  
+  @keyframes fade {
+  from {opacity: 0.4;}
+  to {opacity: 1;}
+  }
+  
+
+/*MV*/
+.MV{
+    text-align: center;
+    margin-top: 150px;
+    color: rgb(255, 235, 0);
+    font-family: "Shrikhand";
+    letter-spacing: 0.1rem;
+}
+
+.video-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: left;
+    background-color: rgb(3, 35, 50);
+    height: 450px;
+  }
+
+  @media screen and (min-device-width: 390px) and (max-device-width: 480px) {
+    .video-container {
+     display: none;
+    }
+    
+    .video-container-mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    }
+
+    .video-container-mobile h3 {
+      color: rgb(255,235,0);
+      text-transform: uppercase;
+      font-style: italic;
+      padding-bottom: 40px;
+      }
+      }
+      
+      @media screen and (min-device-width: 480px) {
+      .video-container-mobile {
+      display: none;
+      }
+      }      
+  
+   .video-info {
+    margin-top: 5px;
+    text-align: left;
+    padding-left: 80px;
+    width: 300px;
+  }
+   .video-info h2 {
+    color: rgb(255, 235, 0);
+    width: 300px;
+  }
+   .video-info p {
+    color: white;
+    width: 300px;
+  }
+   .video-youtube {
+    margin: 20px;
+    position: relative;
+    width: 660px;
+  }
+   .video-youtube iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+   .video-thumbnails {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: center;
+    margin-left: 10px;
+    width: 250px;
+  }
+   .video-thumbnails img {
+    width: 178px;
+    height: 100px;
+    margin: 22px;
+    border: 3px solid rgb(255, 235, 0);
+    cursor: pointer;
+  }
+   .video-thumbnails img:hover {
+    border: 3px solid rgb(255, 235, 0);
+    filter: brightness(1.5);
+  }
+
+  .video-thumbnails img:hover {
+    border: 3px solid rgb(255, 235, 0);
+    filter: brightness(1.5);
+  }
+ 
+ /* About */
+.about {
+  text-align: center;
+  margin-top: 100px;
+  color: rgb(255, 235, 0);
+  font-family: "Shrikhand";
+  letter-spacing: 0.15rem;
+ }
+ 
+ .aboutCards {
+  text-align: center;
+  display: inline-flex;
+ }
+
+ .aboutCards img {
+  width: 45%;
+  border: 3px solid rgb(255, 255, 255);
+ }
+ 
+ .aboutCards .col {
+  display: inline-block;
+  margin-left: 50px;
+ }
+ 
+ .mempic {
+  width: 200px;
+ }
+ 
+ .aboutCards h3 {
+  text-transform: uppercase;
+  /*font-style: italic;*/
+ }
+
+ .singerName1 {
+  color:green;
+ }
+
+ .singerName2 {
+  color:yellow;
+ }
+
+ .singerName3 {
+  color: blue;
+ }
+ 
+ .singerName4 {
+  color: red;
+ }
+
+.singerName5 {
+  color: purple;
+}
+
+.singerName6 {
+  color: black;
+}
+
+.singerName7 {
+  color: white;
+}
+
+.singerName8{
+color: mediumaquamarine;
+}
+
+ .aboutCards p {
+  font-size: 16px;
+  color: rgb(255, 255, 255);
+  margin-bottom: 30px;
+ }
+ 
+ .aboutCards a {
+  background-color: rgb(85, 98, 105);
+  color: whitesmoke;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1.03px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 10px;
+  margin-bottom: 10px;
+  /*border: 2px solid rgb(224, 177, 203);*/
+  border-radius: 8px;
+ }
+ 
+ .aboutCards a:hover {
+  background: radial-gradient(circle, rgba(255,235,0) 0%, rgba(0,69,149) 100%);
+ }
+ 
+/* Contact */
+.contact {
+  text-align: center;
+  margin-top: 150px;
+  margin-bottom: 40px;
+  color: rgb(255, 235, 0);
+  font-family: "Shrikhand";
+  letter-spacing: 0.15rem;
+ }
+ 
+ .contact-container {
+  display: flex;
+  align-items: flex-start;
+  background-color: rgb(21, 45, 56);
+  padding-top: 20px;
+ }
+ 
+ .image-container {
+ 
+ }
+ 
+ .image-container img {
+  width: 350px;
+  padding-left: 100PX;
+ }
+ 
+ /* Form */
+ .form-container {
+  flex: 1;
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  margin-left: 0px;
+  color:rgb(255, 235, 0); 
+ }
+ 
+ form {
+  display: flex;
+  flex-direction: column;
+ }
+ 
+ form h2 {
+  color: rgb(255, 235, 0);
+  font-style: italic;
+ }
+
+ @media screen and (min-device-width: 390px) and (max-device-width: 480px) {
+  .contact {
+  margin-top: 150px;
+  }
+  
+  .contact-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  }
+  
+  .img-container {
+  display: none;
+  
+  }
+  
+  .form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  }
+  
+  form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  width: 50%;
+  }
+  
+  .contact-container,
+  .form-container,
+  input[type="text"],
+  input[type="email"],
+  input[type="date"],
+  textarea {
+  width: 100%;
+  }
+  
+  .map-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  }
+  
+  .map-container iframe {
+  width: 480px;
+  height: 300px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  }
+  }
+  
+ 
+ /* Text Input Fields */
+ input[type="text"],
+ input[type="email"],
+ input[type="date"],
+ textarea {
+  width: 80%;
+  padding: 3px;
+  margin-top: 5px;
+  border: 2px solid rgb(35, 25, 66);
+  border-radius: 8px;
+  background-color: rgb(113, 113, 142);
+  color: rgb(35, 25, 66);
+ }
+ 
+ input[type="text"]:focus,
+ input[type="email"]:focus,
+ input[type="date"]:focus,
+ textarea:focus {
+  outline: none;
+  border-color: rgb(190, 149, 196);
+ }
+ 
+ /* gender-container */
+ .gender-container {
+  flex-wrap: nowrap;
+ }
+ 
+ .gender-container input[type="radio"] {
+  margin-left: 20px;
+  width: 10px; /* the size of buttons */
+  border: 1px solid rgb(35, 25, 66);
+ }
+ 
+ .gender-container input[type="radio"]:first-child {
+  margin-left: 55px;
+  /* first child means the male button */
+ }
+ 
+ input[type="radio"] {
+  margin-left: 10px;
+  margin-top: 8px;
+  appearance: none; /* Remove the default appearance of the radio button */
+ }
+ 
+ input[type="radio"]:before {
+  content: ''; /* Create a pseudo-element to style the radio button */
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1.5px solid rgb(224, 177, 203);
+ }
+ 
+ input[type="radio"]:checked:before {
+  border: 1px solid rgb(190, 149, 196); /* Set the border color */
+  background-color: rgb(141,233,235); /* Set the background color */
+ }
+ 
+ /* Submit */
+ input[type="submit"] {
+  width: 30%;
+  padding: 8px;
+  background-color: rgb(159, 134, 192);
+  color:whitesmoke;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+ }
+ 
+ input[type="submit"]:hover {
+  background-color: rgb(224, 177, 203);
+  color: rgb(35, 25, 66);
+  font-weight: 700;
+ }
+ 
+/* Map */
+.map-container {
+  filter: hue-rotate(3.142rad);
+ }
+ 
+.map-container iframe {
+ }
+ 
+/* Footer */
+.footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+ }
+ 
+ .footer-left {
+  color: rgb(159, 134, 192);
+  font-size: 14px;
+  flex-grow: 1;
+  padding-left: 30px;
+ }
+ 
+ /* Footer */
+ .footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
+ }
+ 
+ .footer-left {
+  color: rgb(159, 134, 192);
+  font-size: 14px;
+  flex-grow: 1;
+  padding-left: 30px;
+ }
+ 
+ .social-icons {
+  padding-right: 30px;
+ }
+ 
+ .social-icons li {
+  display: inline;
+  padding-left: 5px;
+ }
+ 
+ .social-icons svg {
+  fill: rgb(159, 134, 192);
+ } 
